@@ -1,0 +1,48 @@
+<div class="container-fluid">
+    <div class="container">
+        <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Фильтр по категориям</span>
+            <input type="text" class="form-control" [(ngModel)]="productFilter.category" placeholder="Фильтрация по категориям">
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Фильтр по количеству</span>
+            <!-- <select class="form-select form-select-lg" (input) = 'onFilterWorkersList()' [(ngModel)]="searching.Amount">
+                <option value='0'>Все товары</option>
+                <option value="1">Имеются в наличии</option>
+                <option value="2">Отсутствуют в наличии</option>
+              </select> -->
+
+              <button type="button" [disabled]="filterbtnstate===1" (click)="onFilter(0)" class="btn btn-danger">Все</button>
+              <button type="button" [disabled]="filterbtnstate==2" (click)="onFilter(1)" class="btn btn-danger">Есть</button>
+              <button type="button" [disabled]="filterbtnstate==3" (click)="onFilter(2)" class="btn btn-danger">Нет</button>
+          </div>
+    </div>
+
+      <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">Название</th>
+              <th scope="col">Категория</th>
+              <th scope="col">Вес</th>
+              <th scope="col">Цена <button (click)="useSortingPrice()">⇅</button></th>
+              <th scope="col">Кол-во на складе <button (click)="useSortingAmount()">⇅</button></th>
+              <th scope="col" colspan="3">Действия</th>
+            </tr>
+          </thead>
+          <tbody>
+           <tr *ngFor="let product of productsfiltered | filterBy: productFilter"> 
+              <td>{{product.name}}</td>
+              <td>{{product.category}}</td>
+              <td>{{product.weight}}</td>
+              <td>{{product.price}}</td>
+              <td>{{product.amount}}</td>
+              
+                <td><button type="button" (click)="onChangeAmount(product,1)" class="btn btn-success">+1</button> </td>
+                <td><button type="button" [disabled]="product.amount==0" (click)="onChangeAmount(product,0)" class="btn btn-danger">-1</button> </td>
+ 
+              <td><button type="button" class="btn btn-secondary" [routerLink]="['/edit', product.id]">&#9881;</button></td>
+            </tr>
+          </tbody>
+        </table>
+      
+  </div>

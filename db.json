@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "name": "Acer V2",
+      "article": "2348",
+      "price": "33023",
+      "manufacture": "Acer",
+      "category": "Техника",
+      "weight": "0.4",
+      "amount": 2,
+      "id": 2
+    },
+    {
+      "name": "Стол",
+      "article": "1841297",
+      "price": "2378",
+      "manufacture": "Леруа",
+      "category": "Мебель",
+      "weight": "0.123",
+      "amount": 2,
+      "id": 3
+    },
+    {
+      "name": "Айфон",
+      "article": "725379",
+      "price": "34000",
+      "manufacture": "Аппле",
+      "category": "Телефоны",
+      "weight": 0.2,
+      "amount": 2,
+      "id": 5
+    },
+    {
+      "name": "ыва",
+      "article": "ыва",
+      "price": "3634",
+      "manufacture": "",
+      "category": "Техника",
+      "weight": 346,
+      "amount": 34,
+      "id": 6
+    }
+  ]
+}
